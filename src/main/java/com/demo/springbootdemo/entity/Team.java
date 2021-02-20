@@ -39,12 +39,12 @@ public class Team {
 	
 
 
-	public List<Developer> getDeveloper() {
+	public List<Developer> getDevelopers() {
 		return developers;
 	}
 
 
-	public void setDeveloper(List<Developer> developer) {
+	public void setDevelopers(List<Developer> developer) {
 		this.developers = developer;
 	}
 

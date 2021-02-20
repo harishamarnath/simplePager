@@ -7,6 +7,7 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.demo.springbootdemo.entity.Developer;
 import com.demo.springbootdemo.entity.Team;
 import com.demo.springbootdemo.repository.TeamRepository;
 
@@ -25,6 +26,9 @@ public class TeamServiceImpl implements TeamService {
 	
 	@Override
 	public Team createTeam(Team team) {
+		for(Developer dev :team.getDevelopers()) {
+			dev.setTeam(team);
+		}
 		Team saved = teamRepository.save(team);
 		return saved;
 		

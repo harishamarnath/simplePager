@@ -32,7 +32,7 @@ public class AlertService {
 
 	public String sendAlert(Long teamId, Alert alert) {
 		Team team = teamServiceImpl.FindTeamById(teamId);
-		List<Developer> devs = team.getDeveloper();
+		List<Developer> devs = team.getDevelopers();
 		int index = randomNumber(0, devs.size() - 1);
 		Developer developer = devs.get(index);
 		return postByType(developer, alert);
